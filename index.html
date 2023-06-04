@@ -5,12 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu cartão</title>
+
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    
-    <div id="card-number-box">***</div>
-    <input type="text" id="card-number-input" oninput="myFunction()" />
 
+    <div id="content">
+      <div class="card">
+        <div class="flag">
+          <!-- <img src="./assets/visa.svg" alt=""> -->
+          <div class="flag-icon"></div>
+          <img src="./assets/aproximacao.svg" alt="">
+        </div>
+        
+        <div id="card-number-box">**** **** **** ****</div>
+        
+        <div class="data">
+           <div id="name-box">Seu nome aqui</div>
+           <div id="date-box">**/**</div>
+         </div>
+      </div>
+      
+      <label for="">Número do cartão</label>
+      <input type="text" id="card-number-input" maxlength="19"/>
+
+      <label for="">Nome do titular</label>
+      <input type="text" id="name-input" oninput="myFunction()" />
+
+      <label for="">Validade</label>
+      <input type="text" id="date-input" oninput="myFunction()" />
+
+      <!-- <label for="">CVV</label>
+      <input type="text" id="cvv-input" oninput="myFunction()" maxlength="3" /> -->
+
+    </div>
+
+    <script src="https://unpkg.com/imask"></script>
     <script src="index.js"></script>
   </body>
 </html>

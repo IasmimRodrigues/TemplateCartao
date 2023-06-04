@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+    font-size: 62.5%;
+
+    --visa-icon: url(./assets/visa.svg)
+  }
+
+  .card {
+    background: black;
+    width: 32.8rem;
+    height: 21.2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 1.5rem;
+
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .card .flag {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card .flag .flag-icon {
+    width: 50px;
+    background: var(--visa-icon) no-repeat center;
+  }
+
+  .card #card-number-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+    margin: 7rem 0 1rem;
+  }
+
+  .card .data {
+    display: flex;
+    justify-content: space-between;
+  }
