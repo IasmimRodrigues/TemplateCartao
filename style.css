@@ -1,51 +1,67 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  :root {
-    font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-    --visa-icon: url(./assets/visa.svg)
-  }
+:root {
+  font-size: 62.5%;
 
-  .card {
-    background: black;
-    width: 32.8rem;
-    height: 21.2rem;
-    color: #fff;
-    font-size: 1.6rem;
-    border-radius: 1.5rem;
+  --visa-icon: url(./assets/visa.svg);
+  --elo-icon: url(./assets/elo.svg);
+  --master-icon: url(./assets/mastercard.svg);
+}
 
-    padding: 3rem;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-  }
+body {
+  background: #111827;
+}
 
-  .card .flag {
-    display: flex;
-    justify-content: space-between;
-  }
+.create-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
 
-  .card .flag .flag-icon {
-    width: 50px;
-    background: var(--visa-icon) no-repeat center;
-  }
+.card {
+  width: 32.8rem;
+  height: 21.2rem;
+  padding: 3rem;
+  color: #fff;
+  margin: 20px;
+  background: black;
+  font-size: 1.6rem;
+  border-radius: 1.5rem;
 
-  .card #card-number-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
 
-    margin: 7rem 0 1rem;
-  }
+.card .flag {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .card .data {
-    display: flex;
-    justify-content: space-between;
-  }
+.card .flag #flag-icon {
+  width: 50px;
+  background: var();
+}
+
+.card #card-number-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+
+  margin: 7rem 0 1rem;
+}
+
+.card .data {
+  display: flex;
+  justify-content: space-between;
+}
