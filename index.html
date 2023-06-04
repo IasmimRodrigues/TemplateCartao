@@ -16,43 +16,109 @@
   </head>
   <body>
     <div id="content">
-      <div class="create-card">
-        <div class="card-area">
-          <div class="card">
-            <div class="flag">
-              <!-- <img src="./assets/visa.svg" alt=""> -->
-              <div id="flag-icon"></div>
-              <img src="./assets/aproximacao.svg" alt="" />
+      <form>
+        <div class="create-card">
+          <div class="card-area">
+
+            <!-- cartao - frente -->
+            <div class="card" id="card">
+              <div class="flag">
+                <div id="flag-icon"></div>
+                <img src="./assets/aproximacao.svg" alt="" />
+              </div>
+
+              <div id="card-number-box">•••• •••• •••• ••••</div>
+
+              <div class="data">
+                <div id="name-box">Seu nome aqui</div>
+                <div id="date-box">••/••</div>
+              </div>
             </div>
 
-            <div id="card-number-box">**** **** **** ****</div>
+            <!-- cartao - atras -->
 
-            <div class="data">
-              <div id="name-box">Seu nome aqui</div>
-              <div id="date-box">**/**</div>
+            <div class="cardFlip" id="cardFlip">
+              <div class="range"></div>
+
+              <div id="cvv-info">
+                <h2>CVV</h2>
+                <div class="cvv-number" id="cvv-number">•••</div>
+              </div>
+            </div>
+
+            <!-- cpf -->
+
+            <div class="cpf" id="cpf">
+              <img src="./assets/user.svg" alt="">
+
+              <div id="info-cpf">
+                <h2>CPF do titular do cartão</h2>
+                <div class="cpf-number" id="cpf-number">•••.•••.•••-••</div>
+              </div>
+            </div>
+
+            <h2>
+              <img src="./assets/shieldCheck.svg" alt="" /> Seus dados estão
+              seguros
+            </h2>
+          </div>
+
+          <div class="form">
+            <div class="input">
+              <label for="">Número do cartão</label>
+              <input
+                type="text"
+                id="card-number-input"
+                maxlength="19"
+                placeholder="•••• •••• •••• ••••" onclick="frontCard(event)"
+              />
+            </div>
+
+            <div class="input">
+              <label for="">Nome do titular </label>
+              <input
+                type="text"
+                id="name-input"
+                placeholder="Nome como está no cartão" maxlength="28" onclick="frontCard(event)"
+              />
+            </div>
+
+            <div class="input-group">
+              <div class="input validade">
+                <label for="">Validade </label>
+                <input type="text" id="date-input" placeholder="mm/aa" onclick="frontCard(event)" />
+              </div>
+
+              <div class="input cvv">
+                <label for="" class="help"
+                  >CVV
+                  <img
+                    src="./assets/question.svg"
+                    alt="ícone de ajuda"
+                    title="Esse número está, geralmente, nas costas do seu cartão"
+                  />
+                </label>
+                <input
+                  type="text"
+                  id="cvv-input"
+                  maxlength="3"
+                  placeholder="***" onclick="backCard(event)"
+                />
+              </div>
+            </div>
+
+            <div class="input">
+              <label for="">CPF do titular do cartão</label>
+              <input
+                type="text"
+                id="cpf-input"
+                placeholder="CPF" maxlength="14" onclick="cpf(event)"
+              />
             </div>
           </div>
-          <h2>
-            <img src="./assets/shieldCheck.svg" alt="" /> Seus dados estão
-            seguros
-          </h2>
         </div>
-
-        <div class="form">
-          <label for="">Número do cartão</label>
-          <input type="text" id="card-number-input" maxlength="19" />
-
-          <label for="">Nome do titular</label>
-          <input type="text" id="name-input" oninput="myFunction()" />
-
-          <label for="">Validade</label>
-          <input type="text" id="date-input" oninput="myFunction()" />
-
-          <!-- <label for="">CVV</label>
-          <input type="text" id="cvv-input" oninput="myFunction()" maxlength="3" /> -->
-        </div>
-      </div>
-      <button class="addCard">Adicionar cartão</button>
+        <button class="addCard">Adicionar cartão</button>
+      </form>
     </div>
 
     <script src="https://unpkg.com/imask"></script>

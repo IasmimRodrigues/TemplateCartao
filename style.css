@@ -15,10 +15,76 @@
   --visa-icon: url(./assets/visa.svg);
   --elo-icon: url(./assets/elo.svg);
   --master-icon: url(./assets/mastercard.svg);
+  --background-card: radial-gradient(
+      at 100% 99%,
+      hsla(220, 39%, 10%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 2% 4%, hsla(220, 39%, 10%, 1) 0px, transparent 50%),
+    radial-gradient(at 49% 28%, hsla(270, 81%, 55%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 61% 74%, hsla(270, 81%, 55%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 97% 2%, hsla(270, 81%, 55%, 0.5) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(270, 81%, 55%, 0.5) 0px, transparent 50%);
+
+  --background-visa: radial-gradient(
+      at 100% 99%,
+      hsla(220, 39%, 10%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 2% 4%, hsla(220, 39%, 10%, 1) 0px, transparent 50%),
+    radial-gradient(at 49% 28%, hsla(269, 91%, 65%, 0.48) 0px, transparent 50%),
+    radial-gradient(at 61% 74%, hsla(172, 66%, 50%, 0.38) 0px, transparent 50%),
+    radial-gradient(at 97% 2%, hsla(269, 91%, 65%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(172, 66%, 50%, 1) 0px, transparent 50%);
+
+  --background-elo: radial-gradient(
+      at 100% 99%,
+      hsla(220, 39%, 10%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 2% 4%, hsla(220, 39%, 10%, 1) 0px, transparent 50%),
+    radial-gradient(at 49% 28%, hsla(201, 95%, 40%, 0.56) 0px, transparent 50%),
+    radial-gradient(at 61% 74%, hsla(320, 100%, 42%, 0.38) 0px, transparent 50%),
+    radial-gradient(at 97% 2%, hsla(201, 95%, 40%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(320, 100%, 42%, 1) 0px, transparent 50%);
+
+  --background-master: radial-gradient(
+      at 100% 99%,
+      hsla(220, 39%, 10%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 2% 4%, hsla(220, 39%, 10%, 1) 0px, transparent 50%),
+    radial-gradient(at 49% 28%, hsla(243, 100%, 63%, 0.38) 0px, transparent 50%),
+    radial-gradient(at 61% 74%, hsla(146, 96%, 42%, 0.38) 0px, transparent 50%),
+    radial-gradient(at 97% 2%, hsla(244, 100%, 63%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(146, 96%, 42%, 1) 0px, transparent 50%);
 }
 
 body {
   background: #111827;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  background: #374151;
+  max-width: 80rem;
+  padding: 4rem;
+  margin: auto;
+
+  border: 1px solid #374151;
+  border-radius: 8px;
 }
 
 .create-card {
@@ -26,20 +92,83 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
+
+  margin-bottom: 48px;
 }
+
+/* CARTÃO */
 
 .card {
   width: 32.8rem;
   height: 21.2rem;
   padding: 3rem;
   color: #fff;
-  margin: 20px;
-  background: black;
+  margin: 20px 0 20px 64px;
   font-size: 1.6rem;
   border-radius: 1.5rem;
 
   align-items: center;
   justify-content: center;
+}
+
+.cardFlip {
+  width: 32.8rem;
+  height: 21.2rem;
+  padding: 3rem 0;
+  color: #fff;
+  margin: 20px 0 20px 64px;
+  font-size: 1.6rem;
+  border-radius: 1.5rem;
+}
+
+.cardFlip .range {
+  background: #111827;
+  width: 100%;
+  height: 50px;
+}
+
+.cardFlip #cvv-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+  padding: 0 3rem;
+}
+
+.cardFlip #cvv-info h2 {
+  padding: 0;
+  padding: 0 0 0 2rem;
+  letter-spacing: 1.5px;
+}
+
+.cardFlip #cvv-info .cvv-number {
+  background: #e5e7eb;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #111827;
+
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+#card {
+  background: var(--background-card);
+  animation: fadeIn 2s;
+}
+
+#cardFlip {
+  display: none;
+  background: var(--background-card);
+  animation: fadeIn 2s;
+}
+
+#cpf {
+  display: none;
 }
 
 .card .flag {
@@ -49,19 +178,186 @@ body {
 
 .card .flag #flag-icon {
   width: 50px;
-  background: var();
+  background: #e5e7eb2c;
+  border-radius: 5px;
+}
+
+.card .flag img {
+  width: 24px;
+  height: 24px;
 }
 
 .card #card-number-box {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
   font-size: 2rem;
+  min-height: 30px;
+  letter-spacing: 3px;
 
-  margin: 7rem 0 1rem;
+  margin: 5.5rem 0 2rem;
+  color: #f9fafb;
 }
 
 .card .data {
   display: flex;
   justify-content: space-between;
 }
+
+.card .data #name-box,
+#date-box {
+  color: #f9fafb;
+  opacity: 0.9;
+
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* CPF */
+
+.cpf {
+  width: 32.8rem;
+  height: 20rem;
+  padding: 3rem;
+  color: #fff;
+  margin: 20px 0 20px 64px;
+  font-size: 1.6rem;
+  border-radius: 1.5rem;
+  background: #111827;
+  gap: 20px;
+
+  display: flex;
+  align-items: center;
+  color: #111827;
+}
+
+.cpf img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  opacity: 40%;
+}
+
+.cpf #info-cpf h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #f3f4f6;
+  padding: 0;
+  margin-bottom: 5px;
+}
+
+.cpf #info-cpf .cpf-number {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #f3f4f6;
+  letter-spacing: 4px;
+  padding: 0;
+}
+
+/* FORMULÁRIO DO CARTÃO */
+
+.form .input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .input label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #e5e7eb;
+}
+
+.form .input input {
+  width: 328px;
+  height: 48px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  background: #111827;
+  border: 1.5px solid #9333ea;
+  border-radius: 4px;
+
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #f3f4f6;
+}
+
+.form .input input:focus {
+  border: 0.15rem solid #9333ea;
+  outline: 0.15rem solid #9333ea;
+}
+
+.form .input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.form .input-group .input input {
+  width: 159px;
+  height: 48px;
+}
+
+.form .input-group .validade {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .input-group .cvv .help {
+  display: flex;
+  gap: 10px;
+}
+
+.help img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* BOTÃO DO FORMULÁRIO */
+
+form button {
+  padding: 16px 48px;
+  width: 100%;
+  height: 56px;
+
+  background: #9333ea;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 18px;
+  color: #f9fafb;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+form button:hover {
+  background: #a855f7;
+}
+
+/* ÁREA DE VISUALIZAÇÃO DO CARTÃO */
+
+.card-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+}
+
+.card-area h2 {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 0 0 0 64px;
+
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #e5e7eb;
+}
+
+/*  */
